@@ -34,7 +34,7 @@ const Header = () => {
                         gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
                         style={{ width: '100px',marginRight: '25px' }}
                         >
-                            cart
+                            cont
                         </Button>
                     </li>
                 </ul>

@@ -1,8 +1,9 @@
 import './Cards.css'
 import { useFatchApi } from '../custom-hooks/useFatchApi'
+import CardsTypes from './CardsTypes';
 
 const Cards = () => {
-  const { productFilter } = useFatchApi();
+  const { productFilter,productFilterEletronick,productFilterWomans,productFilterWomansCloates } = useFatchApi();
 
   return (
     <div className='cards-conteiner'>
@@ -18,6 +19,11 @@ const Cards = () => {
             </div>
         </div>
       ))}
+      <div className='cards-types'>
+        <CardsTypes typeCard={productFilterEletronick}/>
+        <CardsTypes typeCard={productFilterWomans}/>
+        <CardsTypes typeCard={productFilterWomansCloates}/>
+      </div>
     </div>
   )
 }
