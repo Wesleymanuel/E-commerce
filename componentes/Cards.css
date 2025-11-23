@@ -9,6 +9,8 @@
     border-radius: 4px;
     gap: 10px;
     padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .cards-conteiner{
     padding-top: 10px;
@@ -19,4 +21,11 @@
     overflow-x: hidden;
     scrollbar-width: none;
     overflow-y: hidden;
+}
+.jewelery-section{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
