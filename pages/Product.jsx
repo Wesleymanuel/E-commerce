@@ -1,12 +1,15 @@
 import { useFatchIndividualProduct } from "../custom-hooks/useFatchIndividualProduct.js"
 import { SlArrowDown } from "react-icons/sl";
 import { TiStarOutline } from "react-icons/ti";
-import { SlArrowUp } from "react-icons/sl";
 import { LuNotebookPen } from "react-icons/lu";
 import { useState } from "react";
+import CardsTypes from "../componentes/CardsTypes.jsx";
+import { useFatchApi } from "../custom-hooks/useFatchApi.js";
 import './Product.css'
 
 const Product = () => {
+
+  const { product } = useFatchApi()
 
   const [descriptionProd , setDescriptionProd] = useState(false)
   const { individualProduct } = useFatchIndividualProduct()
@@ -47,7 +50,7 @@ const Product = () => {
           <button onClick={() => console.log(individualProduct)}>bora ver</button>
         </div>
       </div>
-
+    <CardsTypes typeCard={product}/>
     </div>
   )
 }

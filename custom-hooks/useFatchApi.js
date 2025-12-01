@@ -24,6 +24,7 @@ export const useFatchApi = () => {
   }, []);
 
   return { 
+    product,
     productFilterEletronick,
     productFilter,
     productFilterWomans,

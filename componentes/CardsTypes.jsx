@@ -6,7 +6,7 @@ const CardsTypes = ({typeCard}) => {
   const category = typeCard[0]?.category
 
   return (
-    <div className={`cards-wrapper ${category === "jewelery" ? "jewelery-section" : ""}`} style={{ width: '100%', display: 'flex', gap: '10px', flexFlow: 'wrap', paddingTop: '20px'}}>
+    <div className={`cards-wrapper ${category === "jewelery" ? "jewelery-section" : ""}`} style={{ display: 'flex', gap: '10px', flexFlow: 'wrap', paddingTop: '20px'}}>
         {typeCard.map((prod) => (
           <div className='products-conteiner' key={prod.id} style={{ width: '200px' }}>
               <div>
