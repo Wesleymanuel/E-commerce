@@ -1,46 +1,56 @@
-import { Link } from "react-router-dom"
+import SideBar from './Sidebar'
 import './Header.css'
-import { Button,TextInput } from '@mantine/core'
+import { Button, TextInput } from '@mantine/core'
 import { FaSearch } from "react-icons/fa";
+import { useState } from "react";
 
 const Header = () => {
+
+  const [modal , setModal] = useState(false)
+
   return (
-    <header className="header-conteiner">
+    <>
+      <SideBar open={modal} onClose={() => setModal(false)} />
+
+      <header className="header-conteiner">
         <nav className="nav-header">
-            <div style={{ width: '25%'}}>logo</div>
-            <div style={{ width : '50%', position: 'relative', display: 'flex'}}>
-                <TextInput
-                    placeholder="Input placeholder"
-                    style={{width: '90%'}}
-                />
-                <div className="button-cont">
-                    <FaSearch style={{ }}/>
-                </div>
+          
+          <div style={{ width: '25%' }}>logo</div>
+
+          <div style={{ width : '50%', position: 'relative', display: 'flex' }}>
+            <TextInput placeholder="Input placeholder" style={{ width: '90%' }} />
+            <div className="button-cont">
+              <FaSearch />
             </div>
-            <div style={{ width: '25%'}}>
-                <ul>
-                    <li>
-                        <Button
-                        variant="gradient"
-                        gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
-                        style={{ width: '100px', marginLeft: '25px' }}
-                        >
-                            cart
-                        </Button>
-                    </li>
-                    <li>    
-                        <Button
-                        variant="gradient"
-                        gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
-                        style={{ width: '100px',marginRight: '25px' }}
-                        >
-                            cont
-                        </Button>
-                    </li>
-                </ul>
-            </div>
+          </div>
+
+          <div style={{ width: '25%' }}>
+            <ul>
+              <li>
+                <Button
+                  variant="gradient"
+                  gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
+                  style={{ width: '100px', marginLeft: '25px' }}
+                >
+                  cart
+                </Button>
+              </li>
+              <li>
+                <Button
+                  onClick={() => setModal(prev => !prev)}
+                  variant="gradient"
+                  gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
+                  style={{ width: '100px', marginRight: '25px' }}
+                >
+                  cont
+                </Button>
+              </li>
+            </ul>
+          </div>
+
         </nav>
-    </header>
+      </header>
+    </>
   )
 }
 

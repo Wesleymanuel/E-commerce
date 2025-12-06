@@ -1,0 +1,74 @@
+/* FUNDO ESCURO */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s ease;
+}
+
+.sidebar-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* CONTAINER DA SIDE BAR */
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 2px 0 15px rgba(0,0,0,0.15);
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform .35s ease;
+  z-index: 999;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items:  flex-start;
+}
+
+.sidebar-container.show {
+  transform: translateX(0);
+}
+.person{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+}
+
+.option-continer{
+  height: 90%;
+  width: 100%;
+  margin-top: 13px;
+}
+
+.option-continer > div{
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.option-continer > div >p{
+  font-size: 20px;
+}
+
+.logout{
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
