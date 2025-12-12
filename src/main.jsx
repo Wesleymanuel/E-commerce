@@ -8,6 +8,10 @@ import Home from '../pages/Home.jsx'
 import Login from '../pages/Login.jsx'
 import Product from '../pages/Product.jsx'
 import { MantineProvider } from '@mantine/core'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+
+
+const client = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -16,15 +20,20 @@ const router = createBrowserRouter([
     children : [
       { path : '/', element : <Home/>},
       { path : '/product/:id', element : <Product/> },
-      { path : '/login', element : <Login/> },
     ]
+   },
+   {
+    path : '/login',
+    element : <Login/>
    }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <MantineProvider>
-      <RouterProvider router={router}/>
-    </MantineProvider>
+    <QueryClientProvider client={client}>
+      <MantineProvider>
+        <RouterProvider router={router}/>
+      </MantineProvider>
+    </QueryClientProvider>
   </StrictMode>,
 )

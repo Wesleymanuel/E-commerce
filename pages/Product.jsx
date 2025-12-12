@@ -18,7 +18,7 @@ const Product = () => {
     <div className="indivual-product" >
       <div className="individual-product-card">
 
-        <div style={{ width : '300px', display: 'flex', justifyContent: 'center', borderStyle: 'double'}} >
+        <div style={{ width : '300px', display: 'flex', justifyContent: 'center', borderStyle: 'double', marginTop: '15px'}} >
           <img className="individual-image" src={individualProduct?.image} alt={individualProduct?.title} />
         </div>
 
@@ -32,10 +32,10 @@ const Product = () => {
         </div>
 
         <div style={{width: '100%', display: 'flex' , justifyContent: "flex-start", flexDirection: 'column'}}>
-          <button onClick={() => setDescriptionProd(prev => !prev)} style={{ display: "flex", alignItems: "center" }}>
+          <div onClick={() => setDescriptionProd(prev => !prev)} style={{ display: "flex", alignItems: "center" }}>
             <SlArrowDown className={`arrow-icon ${descriptionProd ? "rotate" : ""}`} />
             <p style={{ marginLeft: "6px" }}>description:</p>
-          </button>
+          </div>
 
           <div className={`description-wrapper ${descriptionProd ? "open" : ""}`}>
             <p>{individualProduct?.description}</p>
@@ -46,11 +46,11 @@ const Product = () => {
         <div>
           <p>Price: {individualProduct?.price} USD</p>
         </div>
-        <div>
-          <button onClick={() => console.log(individualProduct)}>bora ver</button>
+        <div style={{marginBottom: '15px'}}>
+          <button onClick={() => console.log(individualProduct)}>add on cart</button>
         </div>
       </div>
-    <CardsTypes typeCard={product}/>
+        <CardsTypes typeCard={product}/>
     </div>
   )
 }
