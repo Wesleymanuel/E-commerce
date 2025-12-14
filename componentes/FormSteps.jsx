@@ -1,16 +1,15 @@
-import { useState } from 'react';
 import { Stepper} from '@mantine/core';
 
 const FormSteps = ({active,setActive}) => {
 
   return (
-    <div>
+    <div style={{width : "90%", marginTop: "10px"}}>
         <Stepper active={active} onStepClick={setActive}>
-            <Stepper.Step label="First step" description="Create an account">
+            <Stepper.Step description="Create an account">
             </Stepper.Step>
-            <Stepper.Step label="Second step" description="Verify email">
+            <Stepper.Step  description="Verify email and password">
             </Stepper.Step>
-            <Stepper.Step label="Final step" description="Get full access">
+            <Stepper.Step  description="Get full access">
             </Stepper.Step>
             <Stepper.Completed>
             </Stepper.Completed>
