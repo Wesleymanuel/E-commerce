@@ -1,14 +1,12 @@
 import UseRedirectProduct from "../custom-hooks/useRedirectProduct.jsx"
-
+import './Cards.css'
 
 const CardsTypes = ({typeCard}) => {
 
-  const category = typeCard[0]?.category
-
   return (
-    <div className={`cards-wrapper ${category === "jewelery" ? "jewelery-section" : ""}`} style={{ display: 'flex', gap: '10px', flexFlow: 'wrap', paddingTop: '20px'}}>
-        {typeCard.map((prod) => (
-          <div className='products-conteiner' key={prod.id} style={{ width: '200px' }}>
+    <>
+      {typeCard.map((prod) => (
+          <div className='products-conteiner' key={prod.id}>
               <div>
                   <img src={prod.image} alt={prod.title} style={{height: '100px' , width : '120px', borderStyle: "double", padding: '6px' }}/>
               </div>
@@ -20,8 +18,8 @@ const CardsTypes = ({typeCard}) => {
                   <UseRedirectProduct id={prod.id}/>
                 </div>
           </div>
-      ))}
-      </div>
+      ))}  
+  </>
   )
 }
 

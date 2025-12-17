@@ -1,8 +1,15 @@
 import "./Home.css"
 import Box from "../componentes/Box"
+import CardsTypes from "../componentes/CardsTypes"
+import { useFatchApi } from "../custom-hooks/useFatchApi"
 
 
 const Home = () => {
+
+  const { productFilterEletronick } = useFatchApi()
+  const { productFilterWomans } = useFatchApi()
+  const { productFilterWomansCloates } = useFatchApi()
+
   return (
     <main className="main-home">
       <div className="home-page">
@@ -22,6 +29,36 @@ const Home = () => {
         <Box/>
         <Box/>
         <Box/>
+      </div>
+      <div className="cards-content">
+        <div>
+          <h1 style={{marginLeft: "135px"}}>eletronycs</h1>
+          <div className="products">
+            <CardsTypes typeCard={productFilterEletronick}/>
+            <CardsTypes typeCard={productFilterEletronick}/>
+          </div>
+        </div>
+        <div>
+          <h1 style={{marginLeft: "135px"}}>eletronycs</h1>
+          <div className="products">
+            <CardsTypes typeCard={productFilterWomans}/>
+            <CardsTypes typeCard={productFilterWomans}/>
+          </div>
+        </div>
+        <div>
+          <h1 style={{marginLeft: "135px"}}>eletronycs</h1>
+          <div className="products">
+            <CardsTypes typeCard={productFilterWomansCloates}/>
+            <CardsTypes typeCard={productFilterWomansCloates}/>
+          </div>
+        </div>
+        <div>
+          <h1 style={{marginLeft: "135px"}}>eletronycs</h1>
+          <div className="products">
+            <CardsTypes typeCard={productFilterWomansCloates}/>
+            <CardsTypes typeCard={productFilterWomansCloates}/>
+          </div>
+        </div>
       </div>
     </main>
   )
