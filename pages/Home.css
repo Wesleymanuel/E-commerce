@@ -1,4 +1,20 @@
-.home-continer{
+.home-page{
+    height: 80vh;
+    background-color: aquamarine;
+    background-image: url("https://images.unsplash.com/photo-1580828343064-fde4fc206bc6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjAxN3wwfDF8c2VhcmNofDN8fHByb21vdGlvbnN8ZW58MHx8fHwxNzY1OTc1MjUzfDA&ixlib=rb-4.1.0&q=85&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main-home{
     height: 100%;
-    background-color: brown;
+}
+.box-content{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
+    margin-top: 30px;
 }

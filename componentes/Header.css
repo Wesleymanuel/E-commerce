@@ -1,28 +1,21 @@
-.header-conteiner{
+.header-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 55px;
-    background-color: aqua;
+    padding: 10px;
+    background-color: rgb(50, 103, 138);
 }
-.nav-header{
-    width: 100%;
+.nav-container{
+    width: 90%;
     display: flex;
     justify-content: space-between;
+}
+
+.nav-container > div {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
 }
-.nav-header ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-}
-.button-cont{
-    background-color: aliceblue;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
+.text{
+    border-radius: 55px;
 }
