@@ -9,7 +9,7 @@ const useRedirectProduct = ({id}) => {
         <Button
             variant="gradient"
             gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
-            style={{ width: '100px', marginLeft: '25px' }}
+            style={{ width: '100px' }}
             onClick={() => navigate(`/product/${id}`,{ state : { id: id}})}
         >
             viwe

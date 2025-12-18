@@ -6,18 +6,22 @@ const CardsTypes = ({typeCard}) => {
   return (
     <>
       {typeCard.map((prod) => (
-          <div className='products-conteiner' key={prod.id}>
+        <div className="cards-container">
+            <div className="cards" key={prod.id}>
+              <div className="image-container">
+                <img src={prod.image} alt={prod.title} className="image-cards" />
+              </div>
               <div>
-                  <img src={prod.image} alt={prod.title} style={{height: '100px' , width : '120px', borderStyle: "double", padding: '6px' }}/>
-              </div>
-              <div style={{textAlign: 'center'}}>
-                {prod.title < 10 ? (<p>{prod.title}</p>) : (<p style={{fontSize: '10px' }}>{prod.title}</p>)}
-                <p style={{marginTop: '3px'}}>price: {prod.price} USD</p>
-              </div>
-                <div style={{ width: "100%" , display: 'flex', justifyContent: 'center'}}>
-                  <UseRedirectProduct id={prod.id}/>
+                <div className="product-name">
+                  <p onClick={() => console.log(prod)}>{prod.title}</p>
                 </div>
-          </div>
+              </div>
+                <div>
+                  <p>Price: {prod.price} USD</p>
+                </div>
+                <UseRedirectProduct id={prod.id} className="button"/>
+            </div>
+        </div>
       ))}  
   </>
   )
