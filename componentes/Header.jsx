@@ -4,6 +4,8 @@ import { Button, TextInput } from '@mantine/core'
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 import ButtonOptions from './buttonOptions';
+import { TbShoppingBagHeart } from "react-icons/tb";
+
 
 const Header = () => {
 
@@ -15,8 +17,8 @@ const Header = () => {
 
       <header className="header-container">
         <nav className='nav-container'>
-          <div style={{width: "33.3%"}}>
-            logo
+          <div style={{width: "33.3%", display: 'flex', justifyContent: "flex-start"}}>
+            <TbShoppingBagHeart style={{fontSize: '40px'}}/>
           </div>
           <div style={{width: "33.3%", justifyContent: "space-around"}}>
             <ButtonOptions style={{backgroundColor: "rgb(50, 103, 138)"}}>

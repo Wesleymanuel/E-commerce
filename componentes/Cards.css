@@ -1,7 +1,8 @@
 .cards-container{
-    background-color: aqua;
     margin-right: 40px;
     border-radius: 10px;
+    box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.12);
 }
 .cards{
     height: 300px;
@@ -27,7 +28,6 @@
     flex-wrap: nowrap;
 }
 .image-container{
-    background-color: bisque;
     display: flex;
     width: 100%;
     justify-content: center;

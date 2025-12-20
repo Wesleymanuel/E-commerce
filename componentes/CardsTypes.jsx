@@ -6,8 +6,8 @@ const CardsTypes = ({typeCard}) => {
   return (
     <>
       {typeCard.map((prod) => (
-        <div className="cards-container">
-            <div className="cards" key={prod.id}>
+        <div className="cards-container" key={prod.id}>
+            <div className="cards" >
               <div className="image-container">
                 <img src={prod.image} alt={prod.title} className="image-cards" />
               </div>

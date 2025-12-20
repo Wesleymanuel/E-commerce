@@ -6,7 +6,9 @@
     background-color: rgb(50, 103, 138);
 }
 .nav-container{
-    width: 90%;
+    width: 100%;
+    margin-left: 80px;
+    margin-right: 80px;
     display: flex;
     justify-content: space-between;
 }

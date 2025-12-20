@@ -14,15 +14,17 @@
 }
 .box-content{
     display: flex;
-    justify-content: space-around;
-    margin-left: 10px;
+    width: auto;
+    justify-content: space-between;
     margin-top: 55px;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 .cards-content{
     margin-top: 50px;
 }
 .products{
     display: flex;
-    margin-left: 130px;
+    margin-left: 80px;
     overflow-x: scroll;
 }

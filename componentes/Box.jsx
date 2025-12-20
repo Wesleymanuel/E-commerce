@@ -1,12 +1,11 @@
 import './Box.css'
-import { LiaShippingFastSolid } from "react-icons/lia";
 
-export default function Box() {
+export default function Box({icons : Icon, text}) {
     return(
         <>
             <div className="box">
-                <LiaShippingFastSolid style={{fontSize: "30px", marginBottom: "3px"}}/>
-                <p>entrega hoje</p>
+                <Icon style={{fontSize: "30px", marginBottom: "3px"}}/>
+                <p>{text}</p>
             </div>
         </>
     )

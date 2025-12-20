@@ -1,51 +1,37 @@
-.indivual-product {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.product-page{
     height: 100%;
-}
-
-.individual-product-card {
     display: flex;
-    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+}
+.sla{
+    width: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
-
-.individual-image {
-    height: 250px;
-    width: 250px;
+.sla2{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* ------------------------------- */
-/* 🔽 Descrição com animação suave */
-/* ------------------------------- */
-
-.description-wrapper {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height .4s ease, opacity .4s ease;
+.image-conteiner-individual{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    box-sizing: border-box;
 }
-
-.description-wrapper.open {
-    max-height: 300px; /* altura suficiente para o texto */
-    opacity: 1;
+.image-conteiner-individual > img{
+    height: 300px;
 }
-
-/* ------------------------------- */
-/* 🔽 Animação da seta             */
-/* ------------------------------- */
-
-.arrow-icon {
-    transition: transform .3s ease;
-}
-
-.arrow-icon.rotate {
-    transform: rotate(180deg);
+.product-stats{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
