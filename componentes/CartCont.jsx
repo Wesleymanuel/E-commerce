@@ -3,10 +3,8 @@ import './CardCont.css'
 import { GoPlus } from "react-icons/go";
 import { CgMathMinus } from "react-icons/cg";
 
-const CartCont = () => {
+const CartCont = ({cont,setCont}) => {
 
-    const [cont, setCont] = useState(1)
- 
     const addProductOnCart = () => {
         setCont(prev => prev + 1)
     }

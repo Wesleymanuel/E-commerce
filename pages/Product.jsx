@@ -1,19 +1,17 @@
 import { useFatchIndividualProduct } from "../custom-hooks/useFatchIndividualProduct.js"
-import { SlArrowDown } from "react-icons/sl";
-import { TiStarOutline } from "react-icons/ti";
-import { LuNotebookPen } from "react-icons/lu";
-import { useState } from "react";
 import CartCont from "../componentes/CartCont.jsx";
 import { Button } from '@mantine/core'
 import CardsTypes from "../componentes/CardsTypes.jsx";
-import { useFatchApi } from "../custom-hooks/useFatchApi.js";
+import { useState } from "react";
 import './Product.css'
+import { useDispatch } from "react-redux";
+import { addItenOnCart } from "../redux/features/cartItensSlice.js";
 
 const Product = () => {
 
-  const { product } = useFatchApi()
-
+  const dispatch = useDispatch()
   const { individualProduct } = useFatchIndividualProduct()
+  const [cont, setCont] = useState(1)
 
   return (
     <main className="product-page">
@@ -31,10 +29,13 @@ const Product = () => {
             <p>{individualProduct?.description}</p>
           </div>
           <div style={{height: '40%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexDirection: 'column'}}>
-            <CartCont/>
+            <div style={{display : 'flex', justifyContent: 'space-evenly', gap: '30px'}} >
+              <p>Price: {individualProduct?.price} USD</p>
+              <CartCont cont={cont} setCont={setCont}/>
+            </div>
             <div style={{marginTop: '20px'}}>
               <Button>comprar</Button>
-              <Button style={{marginLeft: '20px'}}>adicionar ao carrinho</Button>
+              <Button onClick={() => dispatch(addItenOnCart(individualProduct))} style={{marginLeft: '20px'}}>adicionar ao carrinho</Button>
             </div>
           </div>
         </div>

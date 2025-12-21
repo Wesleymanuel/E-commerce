@@ -19,9 +19,10 @@
 /* CONTAINER DA SIDE BAR */
 .sidebar-container {
   position: fixed;
+  box-sizing: border-box;
   top: 0;
   left: 0;
-  width: 260px;
+  width: 600px;
   height: 100vh;
   background: #ffffff;
   box-shadow: 2px 0 15px rgba(0,0,0,0.15);
@@ -29,10 +30,10 @@
   transform: translateX(-100%);
   transition: transform .35s ease;
   z-index: 999;
-  background-color: aqua;
   display: flex;
   flex-direction: column;
   align-items:  flex-start;
+  overflow-x: scroll;
 }
 
 .sidebar-container.show {
@@ -71,4 +72,18 @@
   margin-top: 5px;
   cursor: pointer;
   font-size: 20px;
+}
+.cart-itens{
+  width: 550px;
+  height: 130px;
+  margin-bottom: 10px;
+  border: 3px solid;
+  border-color: rgb(223, 230, 236);
+  border-radius: 20px;
+  display: flex;
+}
+.container{
+  width: 50%;
+  display: flex;
+  align-items: center;
 }

@@ -1,15 +1,15 @@
 import './Sidebar.css'
-import { Link } from 'react-router-dom';
-import { TbLogout } from "react-icons/tb";
-import { IoPersonCircleOutline } from "react-icons/io5";
-import { MdOutlinePersonAddAlt } from "react-icons/md";
-import { FaCartPlus } from "react-icons/fa";
-import { FaMoneyCheckDollar } from "react-icons/fa6";
-import { BsPersonVcardFill } from "react-icons/bs";
-import { MdOutlineQuestionMark } from "react-icons/md";
-
+import { useSelector} from 'react-redux';
+import CartCont from './CartCont';
+import { RiDeleteBin5Line } from "react-icons/ri"
+import { useDispatch } from 'react-redux';
+import { removeItenOnCart } from '../redux/features/cartItensSlice';
 
 const SideBar = ({ open, onClose }) => {
+
+  const dispacth = useDispatch()
+  const selector = useSelector(state => state.cartIntens?.initialValue ?? [])
+
   return (
     <>
       <div
@@ -17,36 +17,36 @@ const SideBar = ({ open, onClose }) => {
         onClick={onClose}
       />
       <div className={`sidebar-container ${open ? "show" : ""}`}>
-        <div className='person icons'>
-          <IoPersonCircleOutline style={{fontSize : '60px'}}/>
+        <div>
+        {selector.length === 0 ? (
+          <p>Carrinho vazio</p>
+        ) : (
+          selector.map((item) => (
+            <div key={item.id} className='cart-itens'>
+              <div className='container'>
+                <div style={{backgroundColor: "aliceblue", padding: '10px', marginLeft: '5px', marginRight: '9px', borderRadius: '10px'}}>
+                  <img src={item.image} alt={item.title} height='70px'/>
+                </div>
+                <div style={{ height: '100%',overflowX: 'hidden'}}>
+                  <p>{item.title}</p>
+                </div>
+              </div>
+              <div style={{alignSelf: 'flex-end',width: '50%', height: '100%', flexDirection: 'column', display:'flex',justifyContent:'flex-end',padding:'10px', gap: '10px'}}>
+                  <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+                    Price: {item.price} USD
+                   </div>
+                <div style={{display: 'flex', alignItems: 'center',justifyContent: 'flex-end'}}>
+                  <div  onClick={() => dispacth(removeItenOnCart(item.id))} style={{display: 'flex',justifyContent: 'center', alignItems: 'center',marginRight: '20px',borderRight: '3px solid rgb(223, 230, 236)', cursor: 'pointer'}}>
+                    <RiDeleteBin5Line/>
+                    <p style={{marginRight: '15px'}}>remover</p>
+                  </div>
+                  <CartCont cont={selector.cont} setCont={selector.cont}/>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
         </div>
-        <div className='option-continer'>
-            <p>minha conta</p>
-            <div>
-              <FaMoneyCheckDollar style={{fontSize : "20px", marginRight: '6px', marginTop: '4px'}}/>
-              <p>compras</p>
-            </div>
-            <div>
-              <FaCartPlus style={{fontSize : "20px", marginRight: '6px', marginTop: '4px'}}/>
-              <p>carrinho</p>
-            </div>
-            <div>
-              <MdOutlinePersonAddAlt style={{fontSize : "20px", marginRight: '6px', marginTop: '4px'}}/>
-              <p>conta</p>
-            </div>
-            <div>
-              <BsPersonVcardFill style={{fontSize : "20px", marginRight: '6px', marginTop: '4px'}}/>
-              <p>informacoes</p>
-            </div>
-            <div>
-              <MdOutlineQuestionMark style={{fontSize : "20px", marginRight: '6px', marginTop: '4px'}}/>
-              <p>duvidas</p>
-            </div>
-        </div>
-            <div className='logout'>
-              <TbLogout/>
-              <p>logout</p>
-          </div>
       </div>
     </>
   );

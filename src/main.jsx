@@ -9,6 +9,8 @@ import Home from '../pages/Home.jsx'
 import Register from '../pages/Register.jsx'
 import Product from '../pages/Product.jsx'
 import Login from '../pages/Login.jsx';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store.js';
 import { MantineProvider } from '@mantine/core'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
@@ -37,9 +39,11 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <QueryClientProvider client={client}>
-      <MantineProvider>
-        <RouterProvider router={router}/>
-      </MantineProvider>
+      <Provider store={store}>
+        <MantineProvider>
+          <RouterProvider router={router}/>
+        </MantineProvider>
+      </Provider>
     </QueryClientProvider>
   </StrictMode>,
 )

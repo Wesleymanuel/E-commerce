@@ -1,4 +1,5 @@
 import "./Home.css"
+import { Button } from "@mantine/core"
 import Box from "../componentes/Box"
 import CardsTypes from "../componentes/CardsTypes"
 import { useFatchApi } from "../custom-hooks/useFatchApi"
@@ -21,11 +22,14 @@ const Home = () => {
             <h1>promocoes imperdiveis</h1>
             <h1>somente aqui!!!</h1>
           </div>
-          <div>
+          <div style={{marginTop: '10px', marginBottom:'10px'}}>
             <p>aqui voce encontra de tudo, deis de movies para a mobilha da sua casa dos sonhos,</p>
             <p>ate  novidades mega tecnologicas, nao acrdita? confirra já. Acesse nossa promocoes</p>
             <p>ou categorias.</p>
           </div>
+          <Button>
+            ver novidades
+          </Button>
         </div>
       </div>
       <div className="box-content">
