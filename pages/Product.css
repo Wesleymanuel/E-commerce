@@ -35,3 +35,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.oi{
+    border-bottom: 4px solid;
+    border-image: linear-gradient(90deg, rgba(235, 231, 231, 0.13), rgba(181, 181, 187, 0.384)) 1;
+}

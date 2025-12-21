@@ -6,8 +6,9 @@ import '@mantine/carousel/styles.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
 import Home from '../pages/Home.jsx'
-import Login from '../pages/Login.jsx'
+import Register from '../pages/Register.jsx'
 import Product from '../pages/Product.jsx'
+import Login from '../pages/Login.jsx';
 import { MantineProvider } from '@mantine/core'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
     ]
    },
    {
-    path : '/login',
+    path : '/register',
+    element : <Register/>
+   },
+   {
+    path: '/login',
     element : <Login/>
    }
 ])
