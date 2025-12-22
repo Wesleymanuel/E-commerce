@@ -3,6 +3,7 @@ import FormSteps from '../componentes/FormSteps'
 import { TextInput, PasswordInput, Button, Group  } from '@mantine/core';
 import { useState } from 'react';
 import useUserForm from '../custom-hooks/useCreateUser';
+import { handleToBackend } from '../custom-hooks/useCreateUser';
 
 const Register = () => {
 
@@ -16,7 +17,7 @@ const Register = () => {
     <main className='login-body'>
       <div className='form-container'>
         <FormSteps active={active} setActive={setActive}/>
-        <form onSubmit={form.onSubmit((values) => console.log(values))} className='create-user'>
+        <form onSubmit={form.onSubmit((values) => handleToBackend(values))} className='create-user'>
           {active <= 1 ?
           (
           <>
@@ -129,7 +130,7 @@ const Register = () => {
               label="EMAIL: "
               className='input-width'
               placeholder="Your email"
-              {...form.getInputProps("bornDate")}
+              {...form.getInputProps("email")}
             />
           </div>
           <div className='inputs'>
@@ -137,7 +138,7 @@ const Register = () => {
               label="EMAIL: "
               className='input-width'
               placeholder="Your email"
-              {...form.getInputProps("bornDate")}
+              {...form.getInputProps("email")}
             />
           </div>
           <div className='inputs'>
@@ -145,7 +146,7 @@ const Register = () => {
               label="PASSWORD: "
               className='input-width'
               placeholder="Input placeholder"
-              {...form.getInputProps("adress")}
+              {...form.getInputProps("password")}
             />
           </div>
           <div className='inputs'>
@@ -153,7 +154,7 @@ const Register = () => {
               label="CONFIRM PASSWORD: "
               className='input-width'
               placeholder="Input placeholder"
-              {...form.getInputProps("adress")}
+              {...form.getInputProps("password")}
             />
           </div>
         </>

@@ -1,4 +1,5 @@
 import { useForm } from '@mantine/form'
+import axios from 'axios';
 
 export default function useUserForm() {
   return useForm({
@@ -7,6 +8,8 @@ export default function useUserForm() {
       secondName: '',
       bornDate: '',
       adress: '',
+      email: '',
+      password: '',
       cpf: '',
       rg: '',
       phoneNumber: '',
@@ -29,6 +32,10 @@ export default function useUserForm() {
 
       adress: (value) =>
         value.length < 5 ? 'Endereço inválido' : null,
+
+      email: (v) => /^\S+@\S+$/.test(v) ? null : 'Email inválido',
+      
+      password: (v) => v.length < 6 ? 'Senha muito curta' : null,
 
       cpf: (value) =>
         /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(value)
@@ -73,3 +80,30 @@ export default function useUserForm() {
   });
 }
 
+export const handleToBackend = async (values) => {
+
+  try{
+      const payload = {
+        firstName: values.firstName,
+        secondName: values.secondName,
+        bornDate: values.bornDate,
+        adress: values.adress,
+        email: values.email,
+        password: values.password,
+        cpf: values.cpf,
+        rg: values.rg,
+        phoneNumber: values.phoneNumber,
+        banckAccont: values.banckAccont,
+        banckAgency: values.banckAgency,
+        credityCard: values.credityCard,
+        cvc: values.cvc,
+        validDate: values.validDate,
+      };
+
+    
+      const res = await axios.post('http://localhost:3000/users/userscreate', payload)
+      console.log(res)
+  }catch(error){
+    console.log(error)
+  } 
+}
