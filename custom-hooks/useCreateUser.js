@@ -86,7 +86,7 @@ export const handleToBackend = async (values) => {
       const payload = {
         firstName: values.firstName,
         secondName: values.secondName,
-        bornDate: values.bornDate,
+        bornDate: new Date(values.bornDate).toISOString(),
         adress: values.adress,
         email: values.email,
         password: values.password,
