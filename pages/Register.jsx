@@ -1,6 +1,6 @@
 import './Register.css'
 import FormSteps from '../componentes/FormSteps'
-import { TextInput, PasswordInput, Button, Group } from '@mantine/core'
+import { TextInput, PasswordInput, Button, Group, PinInput } from '@mantine/core'
 import { useState } from 'react'
 import useUserForm, { handleToBackend } from '../custom-hooks/useCreateUser'
 
@@ -166,6 +166,16 @@ const Register = () => {
                 />
               </div>
             </>
+          )}
+
+          {active === 3 && (
+            <div style={{padding: "20px", height: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+                <h1>um email com um condifgo de confirmacaao foi enviado, 
+                digite o codigo para proseguirr</h1>
+              <div className='inputs'>
+                <PinInput size='xl' className='input-width'style={{display: 'flex', justifyContent: "center"}}/>
+              </div>
+            </div>
           )}
 
           {/* ================== BUTTONS ================== */}

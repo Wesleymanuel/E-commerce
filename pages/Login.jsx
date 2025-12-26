@@ -1,8 +1,24 @@
 import './Login.css'
 import { TextInput, PasswordInput, Button } from '@mantine/core'
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
+import useLoginForm, { loginUserFunction } from '../custom-hooks/useLoginUser'
 const Login = () => {
+
+    const form = useLoginForm()
+    const navigate = useNavigate()
+
+    const handleSubmit = async (values) => {
+        try {
+        const data = await loginUserFunction(values);
+
+        if (data.jwtToken) {
+            navigate("/");
+        }
+        } catch (err) {
+        console.log("Login inválido", err);
+        }
+    }
+
   return (
     <main className='login-main'>
         <main className='login-container'>
@@ -12,11 +28,11 @@ const Login = () => {
                     <p>faca ja login para poder ter acessos aos</p>
                     <p>nossos produtos e ofertas!!</p>
                 </div>
-                <div className='forms-login-options'>
+                <form className='forms-login-options' onSubmit={form.onSubmit(handleSubmit)}>
                     <div>
-                        <TextInput label='Email: ' width={'100%'}/>
+                        <TextInput label='Email: ' width={'100%'} {...form.getInputProps("email")}/>
                         <div>
-                            <PasswordInput label='Password: ' width={'100%'}/>
+                            <PasswordInput label='Password: ' width={'100%'} {...form.getInputProps("password")}/>
                             <div>
                                 <label>
                                     <input type="checkbox" />
@@ -27,7 +43,7 @@ const Login = () => {
                     </div>
                     <div style={{display: 'flex', flexDirection: "column", justifyContent: 'space-between', alignItems: 'center', height: '100px'}}>
                         <div style={{width: '100%'}}>
-                            <Button style={{width: '100%'}}>
+                            <Button type='submit' style={{width: '100%'}}>
                                 Sing in
                             </Button>
                         </div>
@@ -35,7 +51,7 @@ const Login = () => {
                             <p>don't have cont? <Link to={'/register'} >sing up</Link></p>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
             <div className='login-image'>
                 <div className='image-login-container'>
