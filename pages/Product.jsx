@@ -1,8 +1,8 @@
 import { useFatchIndividualProduct } from "../custom-hooks/useFatchIndividualProduct.js"
 import CartCont from "../componentes/CartCont.jsx";
 import { Button } from '@mantine/core'
-import CardsTypes from "../componentes/CardsTypes.jsx";
 import { useState } from "react";
+import UseRedirectBuyForm from "../custom-hooks/useRedirectBuyForm.jsx";
 import './Product.css'
 import { useDispatch } from "react-redux";
 import { addItenOnCart } from "../redux/features/cartItensSlice.js";
@@ -34,7 +34,7 @@ const Product = () => {
               <CartCont cont={cont} setCont={setCont}/>
             </div>
             <div style={{marginTop: '20px'}}>
-              <Button>comprar</Button>
+              <UseRedirectBuyForm title={individualProduct?.title} price={individualProduct?.price}/>
               <Button onClick={() => dispatch(addItenOnCart(individualProduct))} style={{marginLeft: '20px'}}>adicionar ao carrinho</Button>
             </div>
           </div>

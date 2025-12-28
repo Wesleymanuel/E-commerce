@@ -9,6 +9,7 @@ import Home from '../pages/Home.jsx'
 import Register from '../pages/Register.jsx'
 import Product from '../pages/Product.jsx'
 import Login from '../pages/Login.jsx';
+import BuyForm from '../componentes/buyForm.jsx';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store.js';
 import { MantineProvider } from '@mantine/core'
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
    {
     path: '/login',
     element : <Login/>
+   },
+   {
+    path: '/buy',
+    element : <BuyForm/>
    }
 ])
 
