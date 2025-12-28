@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Combobox, useCombobox, Text, Box } from '@mantine/core';
 
-const groceries = ['🍎 Apples', '🍌 Bananas', '🥦 Broccoli', '🥕 Carrots', '🍫 Chocolate'];
+const groceries = ["men's clothing", "electronics", "jewelery", "women's clothing"];
 
 export default function ButtonOptions() {
   const [search, setSearch] = useState('');

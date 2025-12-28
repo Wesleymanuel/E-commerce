@@ -1,54 +1,48 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import '@mantine/core/styles.css';
-import '@mantine/carousel/styles.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import App from './App.jsx'
-import Home from '../src/pages/Home.jsx'
-import Register from '../src/pages/Register.jsx'
-import Product from '../src/pages/Product.jsx'
-import Login from '../src/pages/Login.jsx';
-import BuyForm from '../src/componentes/buyForm.jsx';
-import { Provider } from 'react-redux';
-import {store} from '../src/redux/store.js';
-import { MantineProvider } from '@mantine/core'
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import '@mantine/core/styles.css'
+import '@mantine/carousel/styles.css'
 
+import App from './App.jsx'
+import Home from './pages/Home.jsx'
+import Register from './pages/Register.jsx'
+import Product from './pages/Product.jsx'
+import Login from './pages/Login.jsx'
+import BuyForm from './componentes/buyForm.jsx'
+
+import { Provider } from 'react-redux'
+import { store } from './redux/store.js'
+import { MantineProvider } from '@mantine/core'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+
+import { HashRouter, Routes, Route } from 'react-router-dom'
 
 const client = new QueryClient()
-
-const router = createBrowserRouter([
-  {
-    path : '/',
-    element : <App/>,
-    children : [
-      { path : '/', element : <Home/>},
-      { path : '/product/:id', element : <Product/> },
-    ]
-   },
-   {
-    path : '/register',
-    element : <Register/>
-   },
-   {
-    path: '/login',
-    element : <Login/>
-   },
-   {
-    path: '/buy',
-    element : <BuyForm/>
-   }
-])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <QueryClientProvider client={client}>
       <Provider store={store}>
         <MantineProvider>
-          <RouterProvider router={router}/>
+          <HashRouter>
+            <Routes>
+
+              {/* Layout principal */}
+              <Route path="/" element={<App />}>
+                <Route index element={<Home />} />
+                <Route path="product/:id" element={<Product />} />
+              </Route>
+
+              {/* Rotas independentes */}
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/buy" element={<BuyForm />} />
+
+            </Routes>
+          </HashRouter>
         </MantineProvider>
       </Provider>
     </QueryClientProvider>
-  </StrictMode>,
+  </StrictMode>
 )
