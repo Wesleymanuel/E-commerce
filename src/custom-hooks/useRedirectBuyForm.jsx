@@ -10,10 +10,9 @@ const useRedirectBuyForm = ({title,price}) => {
             variant="gradient"
             type="submit"
             gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
-            style={{ width: '100px' }}
             onClick={() => navigate(`/buy`,{ state : { title: title, price: price}})}
         >
-            Create account
+            comprar
         </Button>
   )
 }

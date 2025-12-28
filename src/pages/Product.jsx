@@ -11,7 +11,6 @@ const Product = () => {
 
   const dispatch = useDispatch()
   const { individualProduct } = useFatchIndividualProduct()
-  const [cont, setCont] = useState(1)
 
   return (
     <main className="product-page">
@@ -31,7 +30,6 @@ const Product = () => {
           <div style={{height: '40%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexDirection: 'column'}}>
             <div style={{display : 'flex', justifyContent: 'space-evenly', gap: '30px'}} >
               <p>Price: {individualProduct?.price} USD</p>
-              <CartCont cont={cont} setCont={setCont}/>
             </div>
             <div style={{marginTop: '20px'}}>
               <UseRedirectBuyForm title={individualProduct?.title} price={individualProduct?.price}/>
