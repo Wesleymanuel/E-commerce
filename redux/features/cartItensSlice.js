@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useState } from "react";
 
 export const cartSlice = createSlice({
     name : 'cartIntens',
@@ -6,8 +7,15 @@ export const cartSlice = createSlice({
         initialValue : []
     },
     reducers: {
+
         addItenOnCart : (state, action) => {
+            const item = state.initialValue.find(
+            item => item.id === action.payload.id
+            );
+
+            if (!item) {
             state.initialValue.push(action.payload);
+            }
         },
 
         removeItenOnCart : (state, action) => {
