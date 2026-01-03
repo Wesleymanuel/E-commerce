@@ -17,18 +17,16 @@ const Home = () => {
   return (
     <main className="main-home">
       <div className="home-page">
-        <div style={{marginLeft: "80px"}}>
+        <div>
           <div>
             <h1>promocoes imperdiveis</h1>
             <h1>somente aqui!!!</h1>
           </div>
-          <div style={{marginTop: '10px', marginBottom:'10px'}}>
             <p>aqui voce encontra de tudo, deis de movies para a mobilha da sua casa dos sonhos,</p>
             <p>ate  novidades mega tecnologicas, nao acrdita? confirra já. Acesse nossa promocoes</p>
             <p>ou categorias.</p>
-          </div>
-          <Button>
-            ver novidades
+          <Button className="button-home">
+            novidades
           </Button>
         </div>
       </div>
@@ -38,34 +36,31 @@ const Home = () => {
         <Box icons={GoStar} text={'melhores avalidos'}/>
       </div>
       <div className="cards-content">
-        <div>
-          <h1 style={{marginLeft: "80px"}}>eletronycs</h1>
+
+          <h1>eletronycs</h1>
           <div className="products">
             <CardsTypes typeCard={productFilterEletronick}/>
             <CardsTypes typeCard={productFilterEletronick}/>
           </div>
-        </div>
-        <div>
-          <h1 style={{marginLeft: "80px"}}>eletronycs</h1>
+
+          <h1>eletronycs</h1>
           <div className="products">
             <CardsTypes typeCard={productFilterWomans}/>
             <CardsTypes typeCard={productFilterWomans}/>
           </div>
-        </div>
-        <div>
-          <h1 style={{marginLeft: "80px"}}>eletronycs</h1>
+
+          <h1>eletronycs</h1>
           <div className="products">
             <CardsTypes typeCard={productFilterWomansCloates}/>
             <CardsTypes typeCard={productFilterWomansCloates}/>
           </div>
-        </div>
-        <div>
-          <h1 style={{marginLeft: "80px"}}>eletronycs</h1>
+
+          <h1>eletronycs</h1>
           <div className="products">
             <CardsTypes typeCard={productFilterWomansCloates}/>
             <CardsTypes typeCard={productFilterWomansCloates}/>
           </div>
-        </div>
+          
       </div>
     </main>
   )

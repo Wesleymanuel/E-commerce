@@ -1,0 +1,11 @@
+.mobile-header{
+    width: 100%;
+    background-color: rgb(50, 103, 138);
+    padding: 10px;
+    z-index: 20;
+}
+.footer-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

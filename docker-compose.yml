@@ -1,0 +1,25 @@
+services: 
+  ecommerce:
+    container_name: frontend
+    restart: always
+    build: .
+    networks:
+      - ecommerce_net
+    
+
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    ports: 
+      - "3000:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on: 
+      - ecommerce
+    restart: always
+    networks:
+      - ecommerce_net
+
+networks:
+  ecommerce_net:
+     driver: bridge

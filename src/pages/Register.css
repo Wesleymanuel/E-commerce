@@ -45,3 +45,8 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+@media screen and (width : 430px) {
+    .form-container{
+        width: 100%;
+    }
+}

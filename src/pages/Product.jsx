@@ -21,16 +21,14 @@ const Product = () => {
       </div>
       <div className="sla2">
         <div className="product-stats">
-          <div className="oi">
+          <div className="title">
             <h2>{individualProduct?.title}</h2>
           </div>
-          <div className="oi" style={{height : '40%', display: 'flex', alignItems: 'flex-end', overflowX: 'hidden'}}>
+          <div className="oi" style={{ display: 'flex', alignItems: 'flex-start', overflowX: 'hidden'}}>
             <p>{individualProduct?.description}</p>
           </div>
-          <div style={{height: '40%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexDirection: 'column'}}>
-            <div style={{display : 'flex', justifyContent: 'space-evenly', gap: '30px'}} >
-              <p>Price: {individualProduct?.price} USD</p>
-            </div>
+          <div className="stats">
+            <p>Price: {individualProduct?.price} USD</p>
             <div style={{marginTop: '20px'}}>
               <UseRedirectBuyForm title={individualProduct?.title} price={individualProduct?.price}/>
               <Button onClick={() => dispatch(addItenOnCart(individualProduct))} style={{marginLeft: '20px'}}>adicionar ao carrinho</Button>

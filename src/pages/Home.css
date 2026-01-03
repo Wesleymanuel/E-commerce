@@ -28,3 +28,39 @@
     margin-left: 80px;
     overflow-x: scroll;
 }
+.cards-content > h1{
+    margin-left: 80px;
+}
+
+.home-page > div {
+    margin-left: 80px;
+}
+
+@media screen and (width: 430px) {
+    .box-content{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .products{
+        margin-left: 20px;
+    }
+
+    .cards-content > h1{
+        margin-left: 20px;
+    }
+    .home-page{
+        height: 230px;
+    }
+
+    .home-page > div {
+        margin-left: 20px;
+        font-size: 10px;
+    }
+    .home-page > div > p {
+        display: none;
+    }
+    .home-page  .button-home{
+        margin-top: 15px;
+        width: 100px;
+    }
+}
