@@ -13,6 +13,7 @@ const Home = () => {
   const { productFilterEletronick } = useFatchApi()
   const { productFilterWomans } = useFatchApi()
   const { productFilterWomansCloates } = useFatchApi()
+  const { productFilter } = useFatchApi()
 
   return (
     <main className="main-home">
@@ -43,13 +44,13 @@ const Home = () => {
             <CardsTypes typeCard={productFilterEletronick}/>
           </div>
 
-          <h1>eletronycs</h1>
+          <h1>womans</h1>
           <div className="products">
             <CardsTypes typeCard={productFilterWomans}/>
             <CardsTypes typeCard={productFilterWomans}/>
           </div>
 
-          <h1>eletronycs</h1>
+          <h1>womans cloates</h1>
           <div className="products">
             <CardsTypes typeCard={productFilterWomansCloates}/>
             <CardsTypes typeCard={productFilterWomansCloates}/>
@@ -57,8 +58,8 @@ const Home = () => {
 
           <h1>eletronycs</h1>
           <div className="products">
-            <CardsTypes typeCard={productFilterWomansCloates}/>
-            <CardsTypes typeCard={productFilterWomansCloates}/>
+            <CardsTypes typeCard={productFilter}/>
+            <CardsTypes typeCard={productFilter}/>
           </div>
           
       </div>
